@@ -67,7 +67,7 @@ set startT($i) [expr $startT(($i-1)) + [$delay_init value]]
 $ns at $startT($i) "$ftp($i) send $Size($i)"
 $ns at 7.0 "$ftp($i) stop"
 }
-
+#comment
 set startT(0) = 10.0
 for {set i 41}{$i < 81}{incr i} {
 set Size($i) [expr [$RVSize value]]
