@@ -3,6 +3,7 @@ set ns [new Simulator]
 
 $ns color 1 Red
 $ns color 2 Blue
+$ns color 3 Green
 #trace file
 set tf [open exercise_2.tr w]
 $ns trace-all $tf
@@ -30,64 +31,80 @@ set n3 [$ns node]
 set n4 [$ns node]
 set n5 [$ns node]
 
-#and links
+#create links
 $ns duplex-link $n0 $n2 10Mb 10ms DropTail
 $ns duplex-link $n0 $n4 10Mb 10ms DropTail
 $ns duplex-link $n0 $n1 10Mb 10ms DropTail
 $ns duplex-link $n1 $n3 10Mb 10ms DropTail
 $ns duplex-link $n1 $n5 10Mb 10ms DropTail
 
+#set queue limit for link between nodes n0 & n1
 $ns queue-limit $n0 $n1 20
 
+#setup 1 ftp over tcp connection between nodes n3 & n2
+set tcp0 [new Agent/TCP]
+$ns attach-agent $n3 $tcp0
+set sink [new Agent/TCPSink]
+$ns attach-agent $n2 $sink
+$ns connect $tcp0 $sink
+$tcp0 set fid_ 4
+$ftp0 attach-agent $tcp0
+
+#setup 120 ftp over tcp connections between nodes n5 & n4
 for {set i 1} {$i < 121} {incr i} {
  set tcp($i) [new Agent/TCP]
 $ns attach-agent $n5 $tcp($i)
 set sink [new Agent/TCPSink]
 $ns attach-agent $n4 $sink
 $ns connect $tcp($i) $sink
-#$tcp($i) set fid_$i
-#Setup a FTP over TCP connection
+if { $i < 121 } {
+$tcp($i) set fid_ 1
+}
+if { $i < 81 } {
+$tcp($i) set fid_ 2
+}
+if { $i < 41 } {
+$tcp($i) set fid_ 3
+}
 set ftp($i) [new Application/FTP]
 $ftp($i) attach-agent $tcp($i)
 }
 
+#setup delays with their respective distributions
 set delay_init [new RandomVariable/Exponential]
 $delay_init set avg_ 0.05
 
 set RVSize [new RandomVariable/Pareto]
 $RVSize set avg_ 150000
 $RVSize set shape_ 1.5
-
+#setup start and end times of long lasting ftp connection between nodes n3 & n2
+$ns at 0.0 "$ftp0 start"
+$ns at 20.0 "$ftp0 stop"
+#setup start and end times of bursts of traffic over ftp connection between nodes n5 & n4
 set startT(0)  5.0
 for {set i 1} {$i < 41} {incr i} {
 set Size($i) [expr [$RVSize value]]
-
 set startT($i) [expr $startT([expr $i - 1]) + [$delay_init value]]
- #Setup a TCP connection
 $ns at $startT($i) "$ftp($i) send $Size($i)"
 $ns at 7.0 "$ftp($i) stop"
 }
-#comment
-set startT(0)  10.0
+
+set startT(40)  10.0
 for {set i 41} {$i < 81} {incr i} {
 set Size($i) [expr [$RVSize value]]
-
 set startT($i) [expr $startT([expr $i - 1]) + [$delay_init value]]
- #Setup a TCP connection
 $ns at $startT($i) "$ftp($i) send $Size($i)"
 $ns at 12.0 "$ftp($i) stop"
 }
 
-set startT(0)  15.0
+set startT(80)  15.0
 for {set i 81} {$i < 121} {incr i} {
 set Size($i) [expr [$RVSize value]]
-
 set startT($i) [expr $startT([expr $i - 1]) + [$delay_init value]]
- #Setup a TCP connection
 $ns at $startT($i) "$ftp($i) send $Size($i)"
 $ns at 17.0 "$ftp($i) stop"
 }
 
-
+#finishing statements
 $ns at 20 "finish"
 $ns run
