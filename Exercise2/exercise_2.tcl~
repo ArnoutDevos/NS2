@@ -42,12 +42,13 @@ $ns duplex-link $n1 $n5 10Mb 10ms DropTail
 $ns queue-limit $n0 $n1 20
 
 #setup 1 ftp over tcp connection between nodes n3 & n2
-set tcp0 [new Agent/TCP]
+set tcp0 [new Agent/TCP/Reno]
 $ns attach-agent $n3 $tcp0
 set sink [new Agent/TCPSink]
 $ns attach-agent $n2 $sink
 $ns connect $tcp0 $sink
 $tcp0 set fid_ 4
+set ftp0 [new Application/FTP]
 $ftp0 attach-agent $tcp0
 
 #setup 120 ftp over tcp connections between nodes n5 & n4
@@ -104,6 +105,32 @@ set startT($i) [expr $startT([expr $i - 1]) + [$delay_init value]]
 $ns at $startT($i) "$ftp($i) send $Size($i)"
 $ns at 17.0 "$ftp($i) stop"
 }
+
+proc plotWindow {tcpSource1 outWindow} {
+   global ns
+   set now [$ns now]
+   set cwnd [$tcpSource1 set cwnd_]
+
+   puts  $outWindow "$now $cwnd"
+   #Recursive call
+   $ns at [expr $now+0.1] "plotWindow $tcpSource1  $outWindow"
+}
+
+proc plotThresh {tcpSource2 outThresh} {
+   global ns
+   set now [$ns now]
+   set ssthresh [$tcpSource2 set ssthresh_]
+
+   puts  $outThresh  "$now $ssthresh"
+   #Recursive call
+   $ns at [expr $now+0.1] "plotThresh $tcpSource2  $outThresh"
+}
+
+set outWindow [open  "window"  w]
+$ns  at  0.0  "plotWindow $tcp0  $outWindow"
+
+set outThresh [open  "thresh"  w]
+$ns  at  0.0  "plotThresh $tcp0  $outThresh"
 
 #finishing statements
 $ns at 20 "finish"
