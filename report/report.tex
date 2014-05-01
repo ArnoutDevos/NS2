@@ -8,7 +8,7 @@
 \usepackage{listings}
 \usepackage{framed}
 \title{Computer Networks: Network simulation}
-\author{Jona Beysens (r0296825) \& Arnout Devos (r0305883)}
+\author{Jona Beysens (r0296825) \& Arnout Devos (r0305883) \\Teacher: Danny Hughes}
 
 \newcommand{\opgave}[1]{\section{Question #1}}
 
@@ -25,7 +25,7 @@ In the beginning of the TCP transfer the slow start is observed. The rate at whi
 \caption{Throughput of FTP connection at node 1 of KotNet topology}
 \label{ex1:question1}
 \end{figure}
-
+\newpage
 \section*{Question 2}
 In the beginning of the TCP transfer the slow start occurs. When the UDP transmission kicks in, a significant drop in TCP throughput is observed. This is caused by the upload bandwidth limitation of the cable modem: TCP sends an accumulated acknowledgements for received packets but the upload line is congested with UDP traffic as can be seen on the figure~\ref{ex1:question2}. Therefor, TCP throughput drops. Acknowledgements are lost due to the overloaded buffer. When the UDP traffic stops, the upload line isn't congested anymore and the slow start mechanism of TCP kicks in again. The throughput converges to the original value of 500kbytes/s.
 \begin{figure}[h]
@@ -48,7 +48,7 @@ The TCP throughput doesn't drop that much as the situation where the rate of sen
 \caption{Throughput of FTP and CBR connection at node 1 of KotNet topology with limited upload bandwith of CBR connection}
 \label{ex1:question5}
 \end{figure}
-
+\newpage
 \section*{Question 6}
 \begin{enumerate}[a)]
 \item

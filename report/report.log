@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  1 MAY 2014 15:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.8)  1 MAY 2014 15:19
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -302,7 +302,9 @@ Package epstopdf Info: Output file is already uptodate.
 <pictures/E1Q1-eps-converted-to.pdf, id=7, 361.35pt x 252.945pt>
 File: pictures/E1Q1-eps-converted-to.pdf Graphic file (type pdf)
 
-<use pictures/E1Q1-eps-converted-to.pdf>
+<use pictures/E1Q1-eps-converted-to.pdf> [1
+
+ <./pictures/E1Q1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <pictures/E1Q2.eps>
 (epstopdf)                    date: 2014-04-08 12:44:48
 (epstopdf)                    size: 20784 bytes
@@ -313,13 +315,11 @@ Package epstopdf Info: Source file: <pictures/E1Q2.eps>
 -to.pdf pictures/E1Q2.eps>
 (epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
-
-<pictures/E1Q2-eps-converted-to.pdf, id=8, 361.35pt x 252.945pt>
+ <pictures/E1Q2-eps-converted-to.pdf, id=19, 361.35pt x 252.945pt>
 File: pictures/E1Q2-eps-converted-to.pdf Graphic file (type pdf)
 
-<use pictures/E1Q2-eps-converted-to.pdf> [1
-
- <./pictures/E1Q1-eps-converted-to.pdf>]
+<use pictures/E1Q2-eps-converted-to.pdf> [2 <./pictures/E1Q2-eps-converted-to.p
+df>]
 Package epstopdf Info: Source file: <pictures/E1Q5.eps>
 (epstopdf)                    date: 2014-04-08 12:44:48
 (epstopdf)                    size: 20777 bytes
@@ -330,11 +330,11 @@ Package epstopdf Info: Source file: <pictures/E1Q5.eps>
 -to.pdf pictures/E1Q5.eps>
 (epstopdf)             \includegraphics on input line 47.
 Package epstopdf Info: Output file is already uptodate.
- <pictures/E1Q5-eps-converted-to.pdf, id=20, 361.35pt x 252.945pt>
+ <pictures/E1Q5-eps-converted-to.pdf, id=29, 361.35pt x 252.945pt>
 File: pictures/E1Q5-eps-converted-to.pdf Graphic file (type pdf)
 
-<use pictures/E1Q5-eps-converted-to.pdf> [2 <./pictures/E1Q2-eps-converted-to.p
-df>] [3 <./pictures/E1Q5-eps-converted-to.pdf>]
+<use pictures/E1Q5-eps-converted-to.pdf> [3 <./pictures/E1Q5-eps-converted-to.p
+df>] [4]
 Package epstopdf Info: Source file: <pictures/E2Q1.eps>
 (epstopdf)                    date: 2014-04-30 21:06:45
 (epstopdf)                    size: 20820 bytes
@@ -345,8 +345,7 @@ Package epstopdf Info: Source file: <pictures/E2Q1.eps>
 -to.pdf pictures/E2Q1.eps>
 (epstopdf)             \includegraphics on input line 66.
 Package epstopdf Info: Output file is already uptodate.
-
-<pictures/E2Q1-eps-converted-to.pdf, id=38, 361.35pt x 252.945pt>
+ <pictures/E2Q1-eps-converted-to.pdf, id=41, 361.35pt x 252.945pt>
 File: pictures/E2Q1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use pictures/E2Q1-eps-converted-to.pdf>
@@ -361,12 +360,12 @@ verted-to.pdf pictures/E2Q2Marked.eps>
 (epstopdf)             \includegraphics on input line 74.
 Package epstopdf Info: Output file is already uptodate.
 
-<pictures/E2Q2Marked-eps-converted-to.pdf, id=39, 342.27875pt x 243.91125pt>
+<pictures/E2Q2Marked-eps-converted-to.pdf, id=42, 342.27875pt x 243.91125pt>
 File: pictures/E2Q2Marked-eps-converted-to.pdf Graphic file (type pdf)
 
-<use pictures/E2Q2Marked-eps-converted-to.pdf> [4
+<use pictures/E2Q2Marked-eps-converted-to.pdf> [5
 
- <./pictures/E2Q1-eps-converted-to.pdf>] [5 <./pictures/E2Q2Marked-eps-converte
+ <./pictures/E2Q1-eps-converted-to.pdf>] [6 <./pictures/E2Q2Marked-eps-converte
 d-to.pdf>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
@@ -382,10 +381,10 @@ Package epstopdf Info: Source file: <pictures/E2Q4.eps>
 (epstopdf)             \includegraphics on input line 88.
 Package epstopdf Info: Output file is already uptodate.
 
-<pictures/E2Q4-eps-converted-to.pdf, id=66, 361.35pt x 252.945pt>
+<pictures/E2Q4-eps-converted-to.pdf, id=70, 361.35pt x 252.945pt>
 File: pictures/E2Q4-eps-converted-to.pdf Graphic file (type pdf)
 
-<use pictures/E2Q4-eps-converted-to.pdf> [6 <./pictures/E2Q4-eps-converted-to.p
+<use pictures/E2Q4-eps-converted-to.pdf> [7 <./pictures/E2Q4-eps-converted-to.p
 df>] (./code.tcl
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 15.
  (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
@@ -393,7 +392,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
- [7]
+ [8]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 56.
 
 (/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
@@ -421,7 +420,7 @@ Overfull \hbox (51.00403pt too wide) in paragraph at lines 97--98
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[8]
+[9]
 Overfull \hbox (51.00403pt too wide) in paragraph at lines 105--106
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -436,28 +435,28 @@ Overfull \hbox (27.00378pt too wide) in paragraph at lines 127--128
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [9] (./report.aux) ) 
+) [10] (./report.aux) ) 
 Here is how much of TeX's memory you used:
  4208 strings out of 493848
  58961 string characters out of 1152824
- 156987 words of memory out of 3000000
+ 157010 words of memory out of 3000000
  7406 multiletter control sequences out of 15000+50000
  9668 words of font info for 35 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  41i,8n,32p,786b,1384s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (10 pages, 185035 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on report.pdf (11 pages, 187003 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
+ 125 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
